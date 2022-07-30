@@ -21,4 +21,9 @@ public class Hero : MonoBehaviour
     {
 
     }
+
+    protected void Death()
+    {
+        Destroy(gameObject);
+    }
 }
