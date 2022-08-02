@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 [CreateAssetMenu(fileName = "HeroStat", menuName = "Scriptable Object/HeroStat")]
 public class HeroStat : ScriptableObject
 {

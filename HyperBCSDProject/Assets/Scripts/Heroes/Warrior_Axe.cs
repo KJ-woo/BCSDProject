@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Warrior_Axe : Hero
 {
     public HeroStat stat;
