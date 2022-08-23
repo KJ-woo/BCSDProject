@@ -518,7 +518,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 733356060842787165, guid: 1c8f396da953c5c45b0349e6b9cac0b4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.6704297
+      value: 4.7
       objectReference: {fileID: 0}
     - target: {fileID: 733356060842787165, guid: 1c8f396da953c5c45b0349e6b9cac0b4, type: 3}
       propertyPath: m_LocalPosition.y
@@ -526,7 +526,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 733356060842787165, guid: 1c8f396da953c5c45b0349e6b9cac0b4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 65.20891
+      value: 19.7
       objectReference: {fileID: 0}
     - target: {fileID: 733356060842787165, guid: 1c8f396da953c5c45b0349e6b9cac0b4, type: 3}
       propertyPath: m_LocalRotation.w
@@ -7213,7 +7213,7 @@ PrefabInstance:
       objectReference: {fileID: 1019825399}
     - target: {fileID: 7399286480552897799, guid: 6d71658df5276544b9c7c5649062dc6f, type: 3}
       propertyPath: AddHeroList.Array.size
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7399286480552897799, guid: 6d71658df5276544b9c7c5649062dc6f, type: 3}
       propertyPath: AddHeroList.Array.data[0]
@@ -7230,11 +7230,11 @@ PrefabInstance:
     - target: {fileID: 7399286480552897799, guid: 6d71658df5276544b9c7c5649062dc6f, type: 3}
       propertyPath: AddHeroList.Array.data[3]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8340951744882726025, guid: fb51ea9c080ce064f98e6bd79598e0c1, type: 3}
     - target: {fileID: 7399286480552897799, guid: 6d71658df5276544b9c7c5649062dc6f, type: 3}
       propertyPath: AddHeroList.Array.data[4]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 7925216573501476576, guid: 33279d4d1feecb644a8d910102162a86, type: 3}
     - target: {fileID: 7399286480552897820, guid: 6d71658df5276544b9c7c5649062dc6f, type: 3}
       propertyPath: m_Name
       value: ChooseHero
@@ -10568,7 +10568,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.1373117, y: 1.5619394, z: 0.6939148}
+  m_Size: {x: 1.8, y: 1.5619394, z: 0.6939148}
   m_Center: {x: 0.062467456, y: 0.8490787, z: 0.15304261}
 --- !u!114 &1871092633
 MonoBehaviour:
@@ -11832,7 +11832,7 @@ PrefabInstance:
       objectReference: {fileID: 1019825399}
     - target: {fileID: 7399286480552897799, guid: 6d71658df5276544b9c7c5649062dc6f, type: 3}
       propertyPath: AddHeroList.Array.size
-      value: 7
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7399286480552897799, guid: 6d71658df5276544b9c7c5649062dc6f, type: 3}
       propertyPath: AddHeroList.Array.data[0]

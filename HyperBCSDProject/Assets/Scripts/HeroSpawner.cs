@@ -11,14 +11,12 @@ public class HeroSpawner : MonoBehaviour
     private int height = 8; // maximum = width * height
 
     private GameObject instantHero;
-    private BoxCollider area;
     private Vector3[] heroesPosition;
     public List<GameObject> CurrentHeroList = new List<GameObject>();
     public List<GameObject> AddedHeroList = new List<GameObject>();
 
     private void Start()
     {
-        area = GetComponent<BoxCollider>();
         heroesPosition = new Vector3[height * width];
     }
     private void Update()
@@ -33,23 +31,16 @@ public class HeroSpawner : MonoBehaviour
         StartCoroutine(InstantiateHero());
     }
 
+    // 장애물에 부딛혔을 때 실행되는 함수
     public void DeleteHero(GameObject hero)
     {
         int index = CurrentHeroList.IndexOf(hero);
-        
-        StartCoroutine(DestroyDelay(index));
-    }
-    IEnumerator DestroyDelay(int index)
-    {
-        new WaitForSeconds(2.0f);
-        Destroy(CurrentHeroList[index]);
-        CurrentHeroList.RemoveAt(index);
-        yield return null;
+        // 현재 영웅 리스트의 영웅을 삭제한다.
+        Destroy(CurrentHeroList[index].gameObject);
     }
     // 초기 자리를 설정하는 함수
     private void SetHeroesPosition()
     {
-        Vector3 size = area.size;
         Vector3 basePosition = transform.position;
 
         for(int i = 0; i < height * width; ++i)
@@ -66,8 +57,27 @@ public class HeroSpawner : MonoBehaviour
     {
         for(int i=0;i<CurrentHeroList.Count; ++i)
         {
-            CurrentHeroList[i].transform.position = heroesPosition[i];
+            if(CurrentHeroList[i].gameObject != null)
+            {
+                CurrentHeroList[i].transform.position = heroesPosition[i];
+            }
         }
+    }
+
+    // 영웅을 추가하는 함수
+    private void AddHeroOnCurrentHeroList(GameObject hero)
+    {
+        // 만약 빈칸이 있다면 그 자리에 영웅을 추가한다.
+        for (int i = 0; i < CurrentHeroList.Count; ++i)
+        {
+            if(CurrentHeroList[i].gameObject == null)
+            {
+                CurrentHeroList[i] = hero;
+                return;
+            }
+        }
+        // 없다면 맨 뒷자리에 영웅을 추가한다.
+        CurrentHeroList.Add(hero);
     }
 
     // 새로 추가된 영웅을 생성한다.
@@ -75,13 +85,14 @@ public class HeroSpawner : MonoBehaviour
     {
         while(AddedHeroList.Count > 0)
         {
-            // 추가할 영웅 리스트의 첫 번째 영웅 추가
+            // 영웅 추가 리스트의 첫 번째 영웅 추가
             instantHero = Instantiate(AddedHeroList[0], transform.position, transform.rotation);
             // HeroSpawner 게임오브젝트 위치의 자식으로 생성되게 함.
             instantHero.transform.parent = transform;
-            // 리스트의 해당 인덱스 제거
+            // 영웅 추가 리스트의 해당 인덱스 제거
             AddedHeroList.RemoveAt(0);
-            CurrentHeroList.Add(instantHero);
+            // 현재 영웅 리스트에 영웅 추가
+            AddHeroOnCurrentHeroList(instantHero);
         }
         yield return null;
     }
