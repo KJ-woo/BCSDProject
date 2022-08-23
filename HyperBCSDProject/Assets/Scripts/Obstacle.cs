@@ -4,11 +4,18 @@ using UnityEngine;
 
 public class Obstacle : MonoBehaviour
 {
+    public GameObject HeroSpanwer;
+    private HeroSpawner heroSpawner;
+
+    private void Start()
+    {
+        heroSpawner = HeroSpanwer.GetComponent<HeroSpawner>();
+    }
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Hero"))
+        if(other.CompareTag("Hero") && heroSpawner.CurrentHeroList.Count != 0)
         {
-            Destroy(other.gameObject);
+            heroSpawner.DeleteHero(other.gameObject);
         }
     }
 }

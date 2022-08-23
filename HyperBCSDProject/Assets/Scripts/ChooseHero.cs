@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ChooseHero : MonoBehaviour
 {
-    public List<Hero> AddHeroList = new List<Hero>();
+    public List<GameObject> AddHeroList = new List<GameObject>();
     public GameObject HeroSpawner;
 
     private HeroSpawner heroSpawner;
