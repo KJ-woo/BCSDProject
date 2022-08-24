@@ -74,17 +74,5 @@ public class PlayerController : MonoBehaviour
         yield return null;
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        // 결승점에 도달하면
-        if (other.CompareTag("FinishLine"))
-        {
-            // 게임모드를 배치 모드로 바꿈
-            gameMode = GameMode.PlacementMode;
-            // 180도 회전시킴
-            transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
 
-            // 카메라, 애니메이션 변경해줘야 함
-        }
-    }
 }
