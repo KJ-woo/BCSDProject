@@ -12,17 +12,23 @@ public class HeroSpawner : MonoBehaviour
 
     private GameObject instantHero;
     private Vector3[] heroesPosition;
+    private PlayerController player;
     public List<GameObject> CurrentHeroList = new List<GameObject>();
     public List<GameObject> AddedHeroList = new List<GameObject>();
 
     private void Start()
     {
+        player = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
         heroesPosition = new Vector3[height * width];
     }
     private void Update()
     {
-        SetHeroesPosition();
-        UpdateHeroesPosition();
+        // 달리는 중일때만 동작
+        if(player.gameMode == GameMode.RunMode)
+        {
+            SetHeroesPosition();
+            UpdateHeroesPosition();
+        }
     }
     // 영웅 선택지 중 하나를 골랐을때 실행되는 함수.
     public void AddHero(List<GameObject> AddHeroList)
@@ -78,6 +84,21 @@ public class HeroSpawner : MonoBehaviour
         }
         // 없다면 맨 뒷자리에 영웅을 추가한다.
         CurrentHeroList.Add(hero);
+    }
+
+    // 생존한 히어로들을 선택하기 위해 반환한다.
+    public List<HeroController> ReturnHeroes()
+    {
+        List<HeroController> HeroList = new List<HeroController>();
+        for(int i=0; i<CurrentHeroList.Count; ++i)
+        {
+            if(CurrentHeroList[i].gameObject != null)
+            {
+                HeroController hero = CurrentHeroList[i].GetComponent<HeroController>();
+                HeroList.Add(hero);
+            }
+        }
+        return HeroList;
     }
 
     // 새로 추가된 영웅을 생성한다.

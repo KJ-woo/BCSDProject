@@ -23,11 +23,7 @@ public class PlayerController : MonoBehaviour
     private Vector3 touchEnd;       // 터치 종료 지점
 
     public GameMode gameMode;
-    /*
-     * [serializeField]
-     * private GameObject Units;    // 움직일 유닛들 오브젝트
-     * 
-     */
+
     void Start()
     {
         playerRigid = GetComponent<Rigidbody>();

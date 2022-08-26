@@ -6,11 +6,13 @@ public class Hero : MonoBehaviour
 {
     protected PlayerController player;
     protected Animator anim;
+    protected Rigidbody rigid;
 
     protected void Start()
     {
         player = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
         anim = GetComponent<Animator>();
+        rigid = GetComponent<Rigidbody>();
     }
 
     protected void Update()
@@ -20,19 +22,17 @@ public class Hero : MonoBehaviour
             Anim_Placement();
         }
     }
-    // 이동 중 속도를 동일하게 맞추는 함수
-    protected void Run()
+
+    private void FreezeRotation()
     {
-        /* 
-         *  if gameMode == Run
-         *      tempMoveSpeed = moveSpeed
-         *      moveSpeed = 1
-         *  else
-         *      moveSpeed = tempMoveSpeed
-         */
+        rigid.velocity = Vector3.zero;
+        rigid.angularVelocity = Vector3.zero;
 
     }
-
+    private void FixedUpdate()
+    {
+        FreezeRotation();
+    }
     private void Anim_Placement()
     {
         anim.SetTrigger("active_PlacementMode");
