@@ -3677,6 +3677,10 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1329638177129074, guid: a25996a7d0674de40a8273b54b50aa7b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1329638177129074, guid: a25996a7d0674de40a8273b54b50aa7b, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 8
       objectReference: {fileID: 0}
@@ -5397,9 +5401,9 @@ GameObject:
   - component: {fileID: 1019825400}
   - component: {fileID: 1019825403}
   - component: {fileID: 1019825402}
-  - component: {fileID: 1019825401}
-  - component: {fileID: 1019825404}
   - component: {fileID: 1019825405}
+  - component: {fileID: 1019825404}
+  - component: {fileID: 1019825401}
   m_Layer: 0
   m_Name: HeroSpawner
   m_TagString: Untagged
@@ -5430,10 +5434,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1019825399}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb80755bbddeade4085171a03f3cbf29, type: 3}
+  m_Script: {fileID: 11500000, guid: 3dd656c2dbc6ac5498e04d9bb0c867ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heroSpawner: {fileID: 1019825403}
+  dragRectangle: {fileID: 1419820916}
 --- !u!65 &1019825402
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5461,6 +5465,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   width: 4
   height: 8
+  player: {fileID: 1871092633}
   CurrentHeroList: []
   AddedHeroList: []
 --- !u!114 &1019825404
@@ -5490,10 +5495,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1019825399}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3dd656c2dbc6ac5498e04d9bb0c867ff, type: 3}
+  m_Script: {fileID: 11500000, guid: eb80755bbddeade4085171a03f3cbf29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dragRectangle: {fileID: 1419820916}
+  heroSpawner: {fileID: 1019825403}
+  selectedHeroList: []
 --- !u!1001 &1024984898
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11082,7 +11088,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1871092630}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.02, z: -8.84}
+  m_LocalPosition: {x: 0, y: 0.29, z: -8.84}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1550711096}

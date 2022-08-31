@@ -13,8 +13,12 @@ public class Hero : MonoBehaviour
         player = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
         anim = GetComponent<Animator>();
         rigid = GetComponent<Rigidbody>();
+        //HeroSelection.Instance.heroList.Add(this.gameObject);
     }
-
+    private void OnDestroy()
+    {
+        //HeroSelection.Instance.heroList.Remove(this.gameObject);
+    }
     protected void Update()
     {
         if(player.gameMode == GameMode.PlacementMode)

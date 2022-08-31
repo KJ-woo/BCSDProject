@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7706044521580505700}
   - component: {fileID: 7706044521578328686}
   - component: {fileID: 7706044521578328682}
+  - component: {fileID: 5535838902749707637}
   m_Layer: 0
   m_Name: Gate
   m_TagString: FinishLine
@@ -114,3 +115,15 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300066, guid: 1e4b37dee538fa643a1b61b19e1ff33c, type: 3}
+--- !u!114 &5535838902749707637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7706044521578277436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a7a48acc346c294597742897880f13a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

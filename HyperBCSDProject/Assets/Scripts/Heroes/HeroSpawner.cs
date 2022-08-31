@@ -12,13 +12,12 @@ public class HeroSpawner : MonoBehaviour
 
     private GameObject instantHero;
     private Vector3[] heroesPosition;
-    private PlayerController player;
+    public PlayerController player;
     public List<GameObject> CurrentHeroList = new List<GameObject>();
     public List<GameObject> AddedHeroList = new List<GameObject>();
 
     private void Start()
     {
-        player = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
         heroesPosition = new Vector3[height * width];
     }
     private void Update()
@@ -89,7 +88,7 @@ public class HeroSpawner : MonoBehaviour
     // 생존한 히어로들을 선택하기 위해 반환한다.
     public List<HeroController> ReturnHeroes()
     {
-        List<HeroController> HeroList = new List<HeroController>();
+        List<HeroController> HeroList = new List<HeroController>(CurrentHeroList.Count);
         for(int i=0; i<CurrentHeroList.Count; ++i)
         {
             if(CurrentHeroList[i].gameObject != null)

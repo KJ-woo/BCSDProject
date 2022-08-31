@@ -6,15 +6,24 @@ public class HeroControlSystem : MonoBehaviour
 {
     [SerializeField]
     private HeroSpawner heroSpawner;
+    [SerializeField]
     private List<HeroController> selectedHeroList;              // 플레이어가 클릭 or 드래그로 선택한 영웅
+    [SerializeField]
     public List<HeroController> HeroList { private set; get; }  // 현재 모든 영웅
 
     private void Awake()
     {
         selectedHeroList = new List<HeroController>();
-        HeroList = heroSpawner.ReturnHeroes();
     }
 
+    private void Update()
+    {
+        GameMode gamemode = heroSpawner.player.gameMode;
+        if(gamemode == GameMode.PlacementMode)
+        {
+            HeroList = heroSpawner.ReturnHeroes();
+        }
+    }
     private void SelectHero(HeroController newHero)
     {
         // 영웅 마커 활성화
@@ -57,8 +66,11 @@ public class HeroControlSystem : MonoBehaviour
     // 드래그로 선택시 호출
     public void DragSelectHero(HeroController newHero)
     {
+        Debug.Log("DragSelectedHero");
         if (!selectedHeroList.Contains(newHero))
         {
+            Debug.Log("!Contains");
+
             SelectHero(newHero);
         }
     }
