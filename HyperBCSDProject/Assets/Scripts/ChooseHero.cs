@@ -18,6 +18,8 @@ public class ChooseHero : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             heroSpawner.AddHero(AddHeroList);
+            Destroy(this.gameObject);
         }
+        
     }
 }

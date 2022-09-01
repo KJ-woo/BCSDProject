@@ -63,7 +63,6 @@ public class Click : MonoBehaviour
                 RaycastHit hit;
                 Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
 
-                // 유닛 오브젝트를 클릭했을 때
                 if(Physics.Raycast(ray, out hit, Mathf.Infinity, layerGround))
                 {
                     heroControlSystem.MoveSelectedHeroes(hit.point);

@@ -669,6 +669,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unitMarker: {fileID: 7545726037001168574}
+  hero: {fileID: 9110069941495723590}
 --- !u!1 &8340951744882726027
 GameObject:
   m_ObjectHideFlags: 0

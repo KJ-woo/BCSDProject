@@ -7,11 +7,13 @@ public class HeroController : MonoBehaviour
 {
     [SerializeField]
     private GameObject unitMarker;
-    private NavMeshAgent navMeshAgent;
+    
+    public Hero hero;
+    private NavMeshAgent nav;
     // Start is called before the first frame update
     void Start()
     {
-        navMeshAgent = GetComponent<NavMeshAgent>();
+        nav = GetComponent<NavMeshAgent>();
     }
 
     public void SelectHero()
@@ -24,6 +26,6 @@ public class HeroController : MonoBehaviour
     }
     public void MoveTo(Vector3 end)
     {
-        navMeshAgent.SetDestination(end);
+        nav.SetDestination(end);
     }
 }

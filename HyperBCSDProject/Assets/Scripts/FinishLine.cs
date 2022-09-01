@@ -15,9 +15,9 @@ public class FinishLine : MonoBehaviour
             player.gameMode = GameMode.PlacementMode;
             // 180도 회전시킴
             player.transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
-
+            
             // 카메라, 애니메이션 변경해줘야 함
-
+            
             Destroy(this.gameObject);
         }
     }

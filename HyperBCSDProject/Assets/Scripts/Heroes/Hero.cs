@@ -1,45 +1,39 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
+
 
 public class Hero : MonoBehaviour
 {
-    protected PlayerController player;
     protected Animator anim;
+    protected bool run;
     protected Rigidbody rigid;
 
-    protected void Start()
+    protected NavMeshAgent nav;
+    protected void Awake()
     {
-        player = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
         anim = GetComponent<Animator>();
         rigid = GetComponent<Rigidbody>();
-        //HeroSelection.Instance.heroList.Add(this.gameObject);
-    }
-    private void OnDestroy()
-    {
-        //HeroSelection.Instance.heroList.Remove(this.gameObject);
+        nav = GetComponent<NavMeshAgent>();
+        run = true;
     }
     protected void Update()
     {
-        if(player.gameMode == GameMode.PlacementMode)
-        {
-            Anim_Placement();
-        }
+        anim.SetBool("Run", run);
     }
-
-    private void FreezeRotation()
+    protected void FreezeRotation()
     {
         rigid.velocity = Vector3.zero;
         rigid.angularVelocity = Vector3.zero;
-
     }
-    private void FixedUpdate()
+    protected void FixedUpdate()
     {
         FreezeRotation();
     }
-    private void Anim_Placement()
+    public void Set_Placement()
     {
-        anim.SetTrigger("active_PlacementMode");
+        run = false;
     }
     protected virtual void Attack()
     {
