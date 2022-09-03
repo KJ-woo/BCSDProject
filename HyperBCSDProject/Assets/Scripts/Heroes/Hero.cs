@@ -10,18 +10,14 @@ public class Hero : MonoBehaviour
     protected bool run;
     protected Rigidbody rigid;
 
-    protected NavMeshAgent nav;
     protected void Awake()
     {
         anim = GetComponent<Animator>();
         rigid = GetComponent<Rigidbody>();
-        nav = GetComponent<NavMeshAgent>();
         run = true;
-    }
-    protected void Update()
-    {
         anim.SetBool("Run", run);
     }
+
     protected void FreezeRotation()
     {
         rigid.velocity = Vector3.zero;
@@ -34,6 +30,12 @@ public class Hero : MonoBehaviour
     public void Set_Placement()
     {
         run = false;
+        anim.SetBool("Run", run);
+    }
+    public void Run()
+    {
+        run = true;
+        anim.SetBool("Run", run);
     }
     protected virtual void Attack()
     {

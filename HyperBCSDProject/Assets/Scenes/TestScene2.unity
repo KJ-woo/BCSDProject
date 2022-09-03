@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -8456,23 +8456,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2790029319518852185, guid: 29d29ac1f846ed44a88cc66348b9092c, type: 3}
   m_PrefabInstance: {fileID: 1495928760}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1500211540 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7706044521578277436, guid: ddd7503242cc67447b33b47f7163178b, type: 3}
-  m_PrefabInstance: {fileID: 1210080484}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1500211546
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1500211540}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a7a48acc346c294597742897880f13a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1518074227
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12292,6 +12275,10 @@ PrefabInstance:
       propertyPath: dragRectangle
       value: 
       objectReference: {fileID: 1419820916}
+    - target: {fileID: 5769124151192065543, guid: e19d0c927dbda5b409f4a6e38a1fe078, type: 3}
+      propertyPath: placementTime
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5769124151192065544, guid: e19d0c927dbda5b409f4a6e38a1fe078, type: 3}
       propertyPath: m_Name
       value: Heroes
