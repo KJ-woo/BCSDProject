@@ -1,22 +1,40 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
+
 
 public class Hero : MonoBehaviour
 {
-    // 이동 중 속도를 동일하게 맞추는 함수
-    protected void Run()
+    protected Animator anim;
+    protected bool run;
+    protected Rigidbody rigid;
+
+    protected NavMeshAgent nav;
+    protected void Awake()
     {
-        /* 
-         *  if gameMode == Run
-         *      tempMoveSpeed = moveSpeed
-         *      moveSpeed = 1
-         *  else
-         *      moveSpeed = tempMoveSpeed
-         */
-
+        anim = GetComponent<Animator>();
+        rigid = GetComponent<Rigidbody>();
+        nav = GetComponent<NavMeshAgent>();
+        run = true;
     }
-
+    protected void Update()
+    {
+        anim.SetBool("Run", run);
+    }
+    protected void FreezeRotation()
+    {
+        rigid.velocity = Vector3.zero;
+        rigid.angularVelocity = Vector3.zero;
+    }
+    protected void FixedUpdate()
+    {
+        FreezeRotation();
+    }
+    public void Set_Placement()
+    {
+        run = false;
+    }
     protected virtual void Attack()
     {
 
