@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Warrior_Hammer : Hero
 {
-    public HeroStat stat;
+    //public HeroStat stat;
 
     protected override void Attack()
     {

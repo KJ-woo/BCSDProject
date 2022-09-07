@@ -13223,7 +13223,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 012bff56e66ef3142b0bbb70485255d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stat: {fileID: 11400000, guid: 06cb05b2783ca8c4c9707cc08d8bfee6, type: 2}
+  heroStat: {fileID: 11400000, guid: 06cb05b2783ca8c4c9707cc08d8bfee6, type: 2}
 --- !u!54 &-1094430528420811933
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -13290,6 +13290,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitMarker: {fileID: 4347357290075428128}
   hero: {fileID: 8320399776864949973}
+  nav: {fileID: 0}
 --- !u!1 &7441169488992458722
 GameObject:
   m_ObjectHideFlags: 0
