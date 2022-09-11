@@ -799,10 +799,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.5
+  m_Radius: 0.64
   m_Height: 1
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.31, z: 0}
 --- !u!114 &2369906482876610488
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -817,6 +817,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mstat: {fileID: 11400000, guid: 302ce1dd60c9b2e4d8250dc604c1c42d, type: 2}
   Monster: {fileID: 107589149769834632}
+  monsterHP: 0
   Cooltime: 0
   animator: {fileID: 11870725981091722}
   target: {x: 0, y: 0, z: 0}

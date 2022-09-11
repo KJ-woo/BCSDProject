@@ -24,13 +24,16 @@ public class CameraManager : MonoBehaviour
         if (firstCamera.transform.position.z > startPoint)
         {
             firstCamera.transform.position += Vector3.back * cameraSpeed * Time.deltaTime;
-
         }
         else
         {
-            playerController.gameMode = GameMode.RunMode;
-            firstCamera.enabled = false;
-            mainCamera.enabled = true;
+            if(playerController.gameMode == GameMode.IntroMode)
+            {
+                playerController.gameMode = GameMode.RunMode;
+                firstCamera.enabled = false;
+                mainCamera.enabled = true;
+
+            }
         }
     }
 }

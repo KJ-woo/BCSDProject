@@ -182,8 +182,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7268743138786418567}
   - component: {fileID: 7268743138779000931}
-  - component: {fileID: 6065387504049356140}
   - component: {fileID: 8672392836246565488}
+  - component: {fileID: 4984397296706245465}
   m_Layer: 0
   m_Name: ChestMonsterPBR
   m_TagString: Monster
@@ -226,20 +226,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!136 &6065387504049356140
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7268743138786378663}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 1
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &8672392836246565488
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -254,9 +240,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mstat: {fileID: 11400000, guid: b68d10c085e6ad34486711fe69c15079, type: 2}
   Monster: {fileID: 7268743138786378663}
+  monsterHP: 0
   Cooltime: 0
   animator: {fileID: 7268743138779000931}
   target: {x: 0, y: 0, z: 0}
+--- !u!65 &4984397296706245465
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7268743138786378663}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.3336653, z: 1}
+  m_Center: {x: 0, y: 0.71864766, z: 0}
 --- !u!1 &7268743138786378665
 GameObject:
   m_ObjectHideFlags: 0

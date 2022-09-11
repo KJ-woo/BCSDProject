@@ -4835,8 +4835,8 @@ MonoBehaviour:
   firstCamera: {fileID: 829041152}
   mainCamera: {fileID: 5769124149824359839}
   playerController: {fileID: 442590280}
-  cameraSpeed: 3
-  mapSize: 33
+  cameraSpeed: 5
+  startPoint: 33
 --- !u!114 &829041150
 MonoBehaviour:
   m_ObjectHideFlags: 0

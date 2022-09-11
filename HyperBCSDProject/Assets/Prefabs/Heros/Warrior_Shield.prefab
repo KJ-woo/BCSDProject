@@ -1427,7 +1427,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17377593591dfb44e81aed9b257ef52a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MonsterList: []
   heroStat: {fileID: 11400000, guid: 1dfc0bc2111201c40bb1ca8eeed28766, type: 2}
+  heroHP: 0
 --- !u!54 &-1810558425563324018
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -12593,6 +12595,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ed91a5afd43cd94387b3d60aeaa200e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 0
+  meshCollider: {fileID: 0}
+  type: 0
+  projectilePos: {fileID: 0}
+  projectile: {fileID: 0}
 --- !u!1 &6293107054278971333
 GameObject:
   m_ObjectHideFlags: 0
@@ -13474,13 +13481,14 @@ GameObject:
   - component: {fileID: 6293107054278742973}
   - component: {fileID: 6293107054282167021}
   - component: {fileID: 6293107054281167021}
+  - component: {fileID: 9106710998970310097}
   m_Layer: 6
   m_Name: Sword5_R
-  m_TagString: Untagged
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6293107054278742973
 Transform:
   m_ObjectHideFlags: 0
@@ -13544,6 +13552,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &9106710998970310097
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6293107054278971357}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300186, guid: dc603c42b6599174e901596a1f756de4, type: 3}
 --- !u!1 &6293107054278971359
 GameObject:
   m_ObjectHideFlags: 0

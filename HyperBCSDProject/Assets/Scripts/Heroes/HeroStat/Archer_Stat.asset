@@ -16,5 +16,5 @@ MonoBehaviour:
   attackRange: 1
   range: 6
   damage: 20
-  attackSpeed: 1
+  attackSpeed: 1.5
   moveSpeed: 1
