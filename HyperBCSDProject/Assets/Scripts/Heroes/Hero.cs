@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-
-
 public class Hero : MonoBehaviour
 {
     private PlayerController player;
@@ -115,7 +113,6 @@ public class Hero : MonoBehaviour
                     targetIndex = i;
                     closeDistIndex = i;
                 }
-
             }
         }
         if(targetIndex == -1 || MonsterList[targetIndex].gameObject != null)
