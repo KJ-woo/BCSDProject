@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    public int damage;
+    private int damage;
 
     [SerializeField]
     float speed = 0f;
@@ -21,6 +21,10 @@ public class Projectile : MonoBehaviour
     public void SetTarget(GameObject gameObject)
     {
         target = gameObject;
+    }
+    public void SetDamage(int _damage)
+    {
+        damage = _damage;
     }
     private void Update()
     {
@@ -45,6 +49,7 @@ public class Projectile : MonoBehaviour
         }
         else if(collision.gameObject.CompareTag("Monster"))
         {
+            // collision.transform.GetComponent<Monster>().OnDamage(damage);
             Destroy(gameObject);
 
         }

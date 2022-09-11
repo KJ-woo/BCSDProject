@@ -60,6 +60,7 @@ public class Weapon : MonoBehaviour
         // projectileRigid.velocity = Vector3.forward * 5f;
         Projectile _projectile = instantProjtectile.GetComponent<Projectile>();
         _projectile.SetTarget(target);
+        _projectile.SetDamage(heroStat.damage);
 
         yield return null;
     }
