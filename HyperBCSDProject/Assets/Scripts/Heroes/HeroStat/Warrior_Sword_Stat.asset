@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 50
   attackRange: 1
-  range: 1
+  range: 2
   damage: 20
   attackSpeed: 1
   moveSpeed: 1

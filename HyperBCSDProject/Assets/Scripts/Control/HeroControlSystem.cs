@@ -23,6 +23,15 @@ public class HeroControlSystem : MonoBehaviour
         {
             HeroList = heroSpawner.ReturnHeroes();
         }
+        else if(gamemode == GameMode.BattleMode)
+        {
+            foreach (HeroController hero in HeroList)
+            {
+                hero.nav.ResetPath();
+                hero.Stay();
+            }
+            DeselectAll();
+        }
     }
     private void SelectHero(HeroController newHero)
     {
@@ -66,11 +75,8 @@ public class HeroControlSystem : MonoBehaviour
     // 드래그로 선택시 호출
     public void DragSelectHero(HeroController newHero)
     {
-        Debug.Log("DragSelectedHero");
         if (!selectedHeroList.Contains(newHero))
         {
-            Debug.Log("!Contains");
-
             SelectHero(newHero);
         }
     }

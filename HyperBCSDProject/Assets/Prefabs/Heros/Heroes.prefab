@@ -291,6 +291,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   runSpeed: 10
+  placementTime: 5
   dragDistance: 0.03
   gameMode: 0
 --- !u!65 &5769124151192065542

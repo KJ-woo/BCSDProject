@@ -6,6 +6,9 @@ TagManager:
   tags:
   - FinishLine
   - Hero
+  - Ground
+  - Monster
+  - Projectile
   layers:
   - Default
   - TransparentFX
@@ -15,7 +18,7 @@ TagManager:
   - UI
   - Hero
   - Ground
-  - 
+  - Projectile
   - 
   - 
   - 

@@ -6,6 +6,7 @@ public enum GameMode
 {
     RunMode,
     PlacementMode,      // 배치 모드
+    BattleMode,         // 전투 모드
 
 }
 public class PlayerController : MonoBehaviour
@@ -13,6 +14,9 @@ public class PlayerController : MonoBehaviour
     
     [SerializeField]
     private float runSpeed;         // 플레이어 속도
+
+    [SerializeField]
+    private float placementTime;    // 배치 시간
     
     private Rigidbody playerRigid;
 
@@ -36,6 +40,10 @@ public class PlayerController : MonoBehaviour
         {
             PlayerMove();
             OnMouse();
+        }
+        else if(gameMode == GameMode.PlacementMode)
+        {
+
         }
         else
         {
@@ -63,11 +71,22 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void StartPlacementMode()
+    {
+        this.gameMode = GameMode.PlacementMode;
+        StartCoroutine(Placement());
+    }
     // 플레이어 드래그 시 좌 우 이동
     IEnumerator OnMove()
     {
         transform.position += new Vector3(touchEnd.x - touchStart.x, 0, 0).normalized * dragDistance;
         yield return null;
+    }
+
+    IEnumerator Placement()
+    {
+        yield return new WaitForSeconds(placementTime);
+        this.gameMode = GameMode.BattleMode;
     }
 
 
