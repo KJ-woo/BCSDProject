@@ -9,7 +9,7 @@ public class Warrior_Sword : Hero
 
     protected override void Attack()
     {
-        Debug.Log("Warrior_Sword : Attack()");
         base.Attack();
+        Debug.Log("Warrior_Sword : Attack()");
     }
 }

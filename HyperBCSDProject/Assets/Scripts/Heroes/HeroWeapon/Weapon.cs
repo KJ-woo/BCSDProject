@@ -45,24 +45,18 @@ public class Weapon : MonoBehaviour
     }
     IEnumerator Swing()
     {
-        yield return new WaitForSeconds(heroStat.attackSpeed/3);
-        //boxCollider.enabled = true;
-        yield return new WaitForSeconds(heroStat.attackSpeed/3);
-        //boxCollider.enabled = false;
-        yield return new WaitForSeconds(heroStat.attackSpeed/3);
+        yield return null;
     }
     IEnumerator Shot()
     {
         // 발사
-        GameObject instantProjtectile = Instantiate(projectile, projectilePos.position, Quaternion.Euler(new Vector3(-90,0,-22)));
+        GameObject instantProjtectile = Instantiate(projectile, projectilePos.position, Quaternion.Euler(new Vector3(-90,0,0)));
         Rigidbody projectileRigid = instantProjtectile.GetComponent<Rigidbody>();
 
-        // projectileRigid.velocity = Vector3.forward * 5f;
         Projectile _projectile = instantProjtectile.GetComponent<Projectile>();
         _projectile.SetTarget(target);
         _projectile.SetDamage(heroStat.damage);
 
         yield return null;
     }
-
 }

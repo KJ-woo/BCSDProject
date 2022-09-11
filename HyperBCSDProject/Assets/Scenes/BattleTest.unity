@@ -356,6 +356,7 @@ GameObject:
   - component: {fileID: 534786863}
   - component: {fileID: 534786862}
   - component: {fileID: 534786861}
+  - component: {fileID: 534786867}
   m_Layer: 0
   m_Name: Monster
   m_TagString: Monster
@@ -399,7 +400,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!136 &534786863
 CapsuleCollider:
@@ -478,6 +479,19 @@ Transform:
   m_Father: {fileID: 1700210835}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &534786867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 534786860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19d25c403efa17d4c9a850234881ff9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 100
 --- !u!1 &695637607
 GameObject:
   m_ObjectHideFlags: 0
@@ -685,6 +699,7 @@ GameObject:
   - component: {fileID: 1054611337}
   - component: {fileID: 1054611336}
   - component: {fileID: 1054611335}
+  - component: {fileID: 1054611341}
   m_Layer: 0
   m_Name: Monster (1)
   m_TagString: Monster
@@ -728,7 +743,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!136 &1054611337
 CapsuleCollider:
@@ -807,6 +822,19 @@ Transform:
   m_Father: {fileID: 1700210835}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1054611341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1054611334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19d25c403efa17d4c9a850234881ff9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 100
 --- !u!1 &1137909800 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5769124149895217513, guid: e19d0c927dbda5b409f4a6e38a1fe078, type: 3}
@@ -920,6 +948,7 @@ GameObject:
   - component: {fileID: 1432404067}
   - component: {fileID: 1432404066}
   - component: {fileID: 1432404065}
+  - component: {fileID: 1432404071}
   m_Layer: 0
   m_Name: Monster (3)
   m_TagString: Monster
@@ -963,7 +992,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!136 &1432404067
 CapsuleCollider:
@@ -1042,6 +1071,19 @@ Transform:
   m_Father: {fileID: 1700210835}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1432404071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1432404064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19d25c403efa17d4c9a850234881ff9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 100
 --- !u!1 &1469420409
 GameObject:
   m_ObjectHideFlags: 0
@@ -1056,6 +1098,7 @@ GameObject:
   - component: {fileID: 1469420412}
   - component: {fileID: 1469420411}
   - component: {fileID: 1469420410}
+  - component: {fileID: 1469420416}
   m_Layer: 0
   m_Name: Monster (2)
   m_TagString: Monster
@@ -1099,7 +1142,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!136 &1469420412
 CapsuleCollider:
@@ -1178,6 +1221,19 @@ Transform:
   m_Father: {fileID: 1700210835}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1469420416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1469420409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19d25c403efa17d4c9a850234881ff9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 100
 --- !u!1 &1470442089
 GameObject:
   m_ObjectHideFlags: 0

@@ -31,15 +31,14 @@ public class Projectile : MonoBehaviour
         if(target != null)
         {
             Debug.Log(target);
-            transform.position += transform.forward * speed * Time.deltaTime;
+            transform.position += transform.up * speed * Time.deltaTime;
             Vector3 _dir = (target.transform.position - this.transform.position).normalized;
-            transform.forward = Vector3.Lerp(transform.forward, _dir, 0.25f);
+            transform.up = Vector3.Lerp(transform.up, _dir, 0.25f);
         }
         else
         {
             Destroy(gameObject, 2f);
         }
-
     }
     private void OnCollisionEnter(Collision collision)
     {
@@ -49,7 +48,7 @@ public class Projectile : MonoBehaviour
         }
         else if(collision.gameObject.CompareTag("Monster"))
         {
-            // collision.transform.GetComponent<Monster>().OnDamage(damage);
+            collision.transform.GetComponent<Monster>().OnDamage(damage);
             Destroy(gameObject);
 
         }
