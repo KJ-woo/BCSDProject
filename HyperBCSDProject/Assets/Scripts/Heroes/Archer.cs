@@ -5,11 +5,11 @@ using UnityEngine;
 
 public class Archer : Hero
 {
-    public HeroStat stat;
+    //public HeroStat stat;
 
     protected override void Attack()
     {
-        Debug.Log("Archer : Attack()");
         base.Attack();
+        Debug.Log("Archer : Attack()");
     }
 }

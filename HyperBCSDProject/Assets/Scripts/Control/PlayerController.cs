@@ -6,6 +6,7 @@ public enum GameMode
 {
     RunMode,
     PlacementMode,      // 배치 모드
+    BattleMode,         // 전투 모드
 
 }
 public class PlayerController : MonoBehaviour
@@ -13,6 +14,9 @@ public class PlayerController : MonoBehaviour
     
     [SerializeField]
     private float runSpeed;         // 플레이어 속도
+
+    [SerializeField]
+    private float placementTime;    // 배치 시간
     
     private Rigidbody playerRigid;
 
@@ -23,11 +27,7 @@ public class PlayerController : MonoBehaviour
     private Vector3 touchEnd;       // 터치 종료 지점
 
     public GameMode gameMode;
-    /*
-     * [serializeField]
-     * private GameObject Units;    // 움직일 유닛들 오브젝트
-     * 
-     */
+
     void Start()
     {
         playerRigid = GetComponent<Rigidbody>();
@@ -40,6 +40,10 @@ public class PlayerController : MonoBehaviour
         {
             PlayerMove();
             OnMouse();
+        }
+        else if(gameMode == GameMode.PlacementMode)
+        {
+
         }
         else
         {
@@ -67,6 +71,11 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void StartPlacementMode()
+    {
+        this.gameMode = GameMode.PlacementMode;
+        StartCoroutine(Placement());
+    }
     // 플레이어 드래그 시 좌 우 이동
     IEnumerator OnMove()
     {
@@ -74,17 +83,11 @@ public class PlayerController : MonoBehaviour
         yield return null;
     }
 
-    private void OnTriggerEnter(Collider other)
+    IEnumerator Placement()
     {
-        // 결승점에 도달하면
-        if (other.CompareTag("FinishLine"))
-        {
-            // 게임모드를 배치 모드로 바꿈
-            gameMode = GameMode.PlacementMode;
-            // 180도 회전시킴
-            transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
-
-            // 카메라, 애니메이션 변경해줘야 함
-        }
+        yield return new WaitForSeconds(placementTime);
+        this.gameMode = GameMode.BattleMode;
     }
+
+
 }
