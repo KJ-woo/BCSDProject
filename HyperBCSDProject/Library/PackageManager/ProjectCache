@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637969974976055830
-    m_Hash: 3994502233
+      ticks: 637984956896097435
+    m_Hash: 997794294
   m_LockFileStatus:
     m_FilePath: C:/BCSDProject/BCSDProject/HyperBCSDProject/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637969974976208546
-    m_Hash: 3498459339
+      ticks: 637984956896107423
+    m_Hash: 1096256828
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_PackageAssets:

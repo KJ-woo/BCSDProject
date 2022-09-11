@@ -258,6 +258,8 @@ GameObject:
   - component: {fileID: 5294023863662035156}
   - component: {fileID: 6184642003877860640}
   - component: {fileID: 6184642003877860643}
+  - component: {fileID: 5225712447485594634}
+  - component: {fileID: 5308608739555794447}
   m_Layer: 0
   m_Name: SlimePBR
   m_TagString: Untagged
@@ -273,7 +275,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6184642003877860642}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 66.68}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5345057217659768393}
@@ -355,6 +357,37 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!136 &5225712447485594634
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6184642003877860642}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5308608739555794447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6184642003877860642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bc704930afa2e644a2f3ac8d8e00c6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mstat: {fileID: 11400000, guid: b15b893d2b7e4434ba827130a268c85a, type: 2}
+  Monster: {fileID: 6184642003877860642}
+  Cooltime: 0
+  animator: {fileID: 0}
+  target: {x: 0, y: 0, z: 0}
 --- !u!1 &7553744430264094272
 GameObject:
   m_ObjectHideFlags: 0

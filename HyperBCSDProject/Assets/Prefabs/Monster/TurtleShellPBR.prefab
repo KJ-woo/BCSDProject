@@ -745,6 +745,8 @@ GameObject:
   m_Component:
   - component: {fileID: 101642693469221464}
   - component: {fileID: 11870725981091722}
+  - component: {fileID: 2036781492552530275}
+  - component: {fileID: 2369906482876610488}
   m_Layer: 0
   m_Name: TurtleShellPBR
   m_TagString: Untagged
@@ -760,7 +762,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 107589149769834632}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.073064856, y: 0.8487277, z: 75.46956}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 101844802029951182}
@@ -787,6 +789,37 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!136 &2036781492552530275
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 107589149769834632}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2369906482876610488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 107589149769834632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bc704930afa2e644a2f3ac8d8e00c6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mstat: {fileID: 11400000, guid: 302ce1dd60c9b2e4d8250dc604c1c42d, type: 2}
+  Monster: {fileID: 107589149769834632}
+  Cooltime: 0
+  animator: {fileID: 11870725981091722}
+  target: {x: 0, y: 0, z: 0}
 --- !u!1 &107595528580688458
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Beholder
   m_EditorClassIdentifier: 
   HP: 200
-  a_range: 1
+  a_range: 5
   distance: 2
   power: 20
   a_speed: 1
-  m_speed: 1
+  m_speed: 5

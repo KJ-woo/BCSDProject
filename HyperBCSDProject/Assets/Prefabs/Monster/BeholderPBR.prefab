@@ -262,6 +262,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7514087959894193194}
   - component: {fileID: 7514087959887256520}
+  - component: {fileID: 7899553055753537607}
+  - component: {fileID: 8659695980470959474}
   m_Layer: 0
   m_Name: BeholderPBR
   m_TagString: Untagged
@@ -277,7 +279,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7514087959894681610}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.30744338, y: 0.8377619, z: 76.19647}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7514087959894193192}
@@ -304,6 +306,37 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &7899553055753537607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7514087959894681610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bc704930afa2e644a2f3ac8d8e00c6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mstat: {fileID: 11400000, guid: c34dcec40fccd9d4e87dfc935bc07fb2, type: 2}
+  Monster: {fileID: 7514087959894681610}
+  Cooltime: 0
+  animator: {fileID: 7514087959887256520}
+  target: {x: 0, y: 0, z: 0}
+--- !u!136 &8659695980470959474
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7514087959894681610}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7514087959894681612
 GameObject:
   m_ObjectHideFlags: 0

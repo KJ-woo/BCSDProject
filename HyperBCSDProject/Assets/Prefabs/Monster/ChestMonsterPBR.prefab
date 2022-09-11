@@ -182,6 +182,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7268743138786418567}
   - component: {fileID: 7268743138779000931}
+  - component: {fileID: 6065387504049356140}
+  - component: {fileID: 8672392836246565488}
   m_Layer: 0
   m_Name: ChestMonsterPBR
   m_TagString: Untagged
@@ -197,7 +199,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7268743138786378663}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.049393006, y: 0.83856773, z: 76.115585}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7268743138786418561}
@@ -224,6 +226,37 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!136 &6065387504049356140
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7268743138786378663}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8672392836246565488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7268743138786378663}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bc704930afa2e644a2f3ac8d8e00c6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mstat: {fileID: 11400000, guid: b68d10c085e6ad34486711fe69c15079, type: 2}
+  Monster: {fileID: 7268743138786378663}
+  Cooltime: 0
+  animator: {fileID: 7268743138779000931}
+  target: {x: 0, y: 0, z: 0}
 --- !u!1 &7268743138786378665
 GameObject:
   m_ObjectHideFlags: 0
