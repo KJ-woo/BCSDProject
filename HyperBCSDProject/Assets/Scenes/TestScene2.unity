@@ -12292,6 +12292,10 @@ PrefabInstance:
       propertyPath: dragRectangle
       value: 
       objectReference: {fileID: 1419820916}
+    - target: {fileID: 5769124151192065543, guid: e19d0c927dbda5b409f4a6e38a1fe078, type: 3}
+      propertyPath: placementTime
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5769124151192065544, guid: e19d0c927dbda5b409f4a6e38a1fe078, type: 3}
       propertyPath: m_Name
       value: Heroes
