@@ -4,6 +4,7 @@ using UnityEngine;
 
 public enum GameMode
 {
+    IntroMode,
     RunMode,
     PlacementMode,      // 배치 모드
     BattleMode,         // 전투 모드
@@ -31,7 +32,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         playerRigid = GetComponent<Rigidbody>();
-        gameMode = GameMode.RunMode;
+        gameMode = GameMode.IntroMode;
     }
 
     void Update()
