@@ -195,6 +195,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9a313c1cf3254042bbb7e5458e7fa50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MonsterList: []
   heroStat: {fileID: 11400000, guid: a372c96bd592975468cd1a1a150f6d62, type: 2}
 --- !u!54 &-8924984720473718008
 Rigidbody:

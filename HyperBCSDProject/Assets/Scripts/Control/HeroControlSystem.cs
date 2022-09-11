@@ -77,8 +77,6 @@ public class HeroControlSystem : MonoBehaviour
     {
         if (!selectedHeroList.Contains(newHero))
         {
-            Debug.Log("!Contains");
-
             SelectHero(newHero);
         }
     }

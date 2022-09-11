@@ -9,7 +9,7 @@ public class Archer : Hero
 
     protected override void Attack()
     {
-        Debug.Log("Archer : Attack()");
         base.Attack();
+        Debug.Log("Archer : Attack()");
     }
 }

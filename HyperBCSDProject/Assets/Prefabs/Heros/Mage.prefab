@@ -8737,6 +8737,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7441169488992094850}
+  - component: {fileID: 6539805211132700856}
   m_Layer: 6
   m_Name: weaponShield_r
   m_TagString: Untagged
@@ -8774,6 +8775,19 @@ Transform:
   m_Father: {fileID: 7441169488992094816}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6539805211132700856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7441169488992458466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ed91a5afd43cd94387b3d60aeaa200e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 1
 --- !u!1 &7441169488992458468
 GameObject:
   m_ObjectHideFlags: 0
@@ -13223,6 +13237,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 012bff56e66ef3142b0bbb70485255d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MonsterList: []
   heroStat: {fileID: 11400000, guid: 06cb05b2783ca8c4c9707cc08d8bfee6, type: 2}
 --- !u!54 &-1094430528420811933
 Rigidbody:

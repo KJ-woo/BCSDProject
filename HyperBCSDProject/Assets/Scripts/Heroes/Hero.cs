@@ -13,6 +13,7 @@ public class Hero : MonoBehaviour
     protected bool isRun;
     protected bool isAttack;
     protected bool onTargetting;
+    protected testMonster testMonster;
     public List<GameObject> MonsterList = new List<GameObject>();
     [SerializeField]
     protected HeroStat heroStat;
@@ -32,6 +33,7 @@ public class Hero : MonoBehaviour
         rigid = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
         weapon = GetComponentInChildren<Weapon>();
+        testMonster = GameObject.Find("Monsters").GetComponent<testMonster>();
         isRun = true;
         isAttack = false;
         onTargetting = false;               // 사거리 안에 적이 들어오면 true
@@ -44,22 +46,30 @@ public class Hero : MonoBehaviour
         {
             // 현재 남아있는 몬스터를 계속 갱신해주는 함수가 필요함.
             // MonsterList = Monster.ReturnCurrentMonster();
-            
+            MonsterList = testMonster.monsterList;
             if(heroStat.hp <= 0)
             {
                 Death();
             }
             else
             {
-                // 사거리 안에 적이 없으면 계속 가장 가까운 적 검색 및 접근
-                if(!onTargetting && MonsterList.Count != 0)
+                if(MonsterList.Count != 0)
                 {
-                    SearchEnemy();     
-                }
-                // 사거리 안에 적이 있으면 해당 적 공격
-                else
-                {
-                    Attack();
+                    // 사거리 안에 적이 없으면 계속 가장 가까운 적 검색 및 접근
+                    if (!onTargetting)
+                    {
+                        {
+                            SearchEnemy();     
+                        }
+                    }
+                    // 사거리 안에 적이 있으면 해당 적 공격
+                    else
+                    {
+                        if(!isAttack)
+                        {
+                            Attack();
+                        }
+                    }
                 }
             }
         }
@@ -86,6 +96,7 @@ public class Hero : MonoBehaviour
     // 자신에게서 제일 가까운 적을 찾는다.
     protected virtual void SearchEnemy()
     {
+        Debug.Log("SearchEnemy");
         currentDist = 0f;
         closeDistIndex = 0;
         targetIndex = -1;
@@ -97,22 +108,42 @@ public class Hero : MonoBehaviour
             {
                 targetDist = currentDist;
                 targetIndex = i;
-                
+                closeDistIndex = i;
             }
         }
-        
+        if(targetIndex == -1)
+        {
+            targetIndex = closeDistIndex;
+        }
         heroController.MoveTo(MonsterList[targetIndex].transform.position);
         // 공격 사거리보다 가까우면 공격모드로 전환.
         if(targetDist <= heroStat.range)
         {
             onTargetting = true;
+            heroController.Stay();
         }
     }
     protected virtual void Attack()
     {
-        // isAttack = true;
-        // anim.SetBool("Attack", isAttack);
+        // 해당 몬스터가 죽었으면 실행하지 않음.
+        if (MonsterList[targetIndex] == null)
+        {
+            onTargetting = false;
+            return;
+        }
+
+        isAttack = true;
+        StartCoroutine(AttackCoroutine());
         // MonsterList[targetIndex].gameObject.GetComponent<Monster>().OnDamage(heroStat.damage);
+    }
+
+    IEnumerator AttackCoroutine()
+    {
+        Debug.Log("Attack");
+        anim.SetBool("isAttack", isAttack);
+        weapon.Attack(MonsterList[targetIndex]);
+        yield return new WaitForSeconds( heroStat.attackSpeed );
+        isAttack = false;
     }
 
     public void OnDamage(int _damage)
@@ -122,5 +153,10 @@ public class Hero : MonoBehaviour
     protected void Death()
     {
         Destroy(gameObject);
+    }
+
+    public HeroStat returnHeroStat()
+    {
+        return heroStat;
     }
 }
