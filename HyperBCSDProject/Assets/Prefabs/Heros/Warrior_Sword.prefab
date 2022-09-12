@@ -3417,7 +3417,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c983810aef4d744a84b8effa50b85bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MonsterList: []
   heroStat: {fileID: 11400000, guid: b8e29ee4e7da11c41972d71c472ee193, type: 2}
+  heroHP: 0
 --- !u!54 &-9013562724515009667
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -13958,6 +13960,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ed91a5afd43cd94387b3d60aeaa200e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  meshCollider: {fileID: 4988042148370593558}
+  type: 0
+  projectilePos: {fileID: 0}
+  projectile: {fileID: 0}
 --- !u!1 &7925216573501476834
 GameObject:
   m_ObjectHideFlags: 0
@@ -14237,9 +14243,10 @@ GameObject:
   - component: {fileID: 7925216573501969292}
   - component: {fileID: 7925216573502771964}
   - component: {fileID: 7925216573503738044}
+  - component: {fileID: 4988042148370593558}
   m_Layer: 6
   m_Name: Axe2_L
-  m_TagString: Untagged
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14307,6 +14314,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &4988042148370593558
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7925216573501476844}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300176, guid: dc603c42b6599174e901596a1f756de4, type: 3}
 --- !u!1 &7925216573501476846
 GameObject:
   m_ObjectHideFlags: 0

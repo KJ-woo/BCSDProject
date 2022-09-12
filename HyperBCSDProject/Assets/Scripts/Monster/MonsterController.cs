@@ -9,6 +9,7 @@ public class MonsterController : MonoBehaviour
     /*public HeroStat hstat;*/
 
     public GameObject Monster;
+    public int monsterHP;
     private float Dist;
 
     WaitForSeconds attackCooltime;
@@ -40,6 +41,7 @@ public class MonsterController : MonoBehaviour
         animator = GetComponent<Animator>();
         setAttackCooltimeWaitForSeconds(Cooltime);
         m_HpBar = GameObject.Find("Canvas/Slider");
+        monsterHP = mstat.HP;
     }
 
     public void setAttackCooltimeWaitForSeconds(float time)
@@ -153,14 +155,14 @@ public class MonsterController : MonoBehaviour
     }
 
     // 데미지만큼 체력 감소
-    public void TakingDamage()
+    public void TakingDamage(int _damage)
     {
         takedamage = true;
         GameObject hero = GameObject.FindWithTag("Hero");
         // 데미지만큼 체력 감소
-        mstat.HP -= hero.GetComponent<HeroStat>().damage;
+        monsterHP -= _damage;
         attack_ready = true;
-        if (mstat.HP <= 0)
+        if (monsterHP <= 0)
         {
             Die();
         }
@@ -171,5 +173,6 @@ public class MonsterController : MonoBehaviour
     {
         dead = true;
         // 몬스터 삭제
+        Destroy(gameObject);
     }
 }

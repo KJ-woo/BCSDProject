@@ -12,20 +12,21 @@ public class Weapon : MonoBehaviour
 {
     private Hero hero;
     private HeroStat heroStat;
+    public int damage;
     private GameObject target;
-    public BoxCollider boxCollider;
+    public MeshCollider meshCollider;
+    
     public WeaponType type;
 
     public Transform projectilePos; // 투사체 생성 위치.
     public GameObject projectile;   // 투사체
 
-    
-    
     void Awake()
     {
         hero = GetComponentInParent<Hero>();
-        boxCollider = GetComponent<BoxCollider>();
+        meshCollider = GetComponent<MeshCollider>();
         heroStat = hero.returnHeroStat();
+        damage = heroStat.damage;
     }
     
     public void Attack(GameObject enemy)
@@ -45,7 +46,7 @@ public class Weapon : MonoBehaviour
     }
     IEnumerator Swing()
     {
-        yield return null;
+        yield return new WaitForSeconds(0.1f);
     }
     IEnumerator Shot()
     {
@@ -55,8 +56,16 @@ public class Weapon : MonoBehaviour
 
         Projectile _projectile = instantProjtectile.GetComponent<Projectile>();
         _projectile.SetTarget(target);
-        _projectile.SetDamage(heroStat.damage);
+        _projectile.SetDamage(damage);
 
         yield return null;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(type == WeaponType.Melee && collision.gameObject.CompareTag("Monster"))
+        {
+            collision.gameObject.GetComponent<Monster>().OnDamage(damage);
+        }
     }
 }

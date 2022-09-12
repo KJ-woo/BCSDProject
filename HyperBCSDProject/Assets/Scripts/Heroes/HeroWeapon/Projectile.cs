@@ -48,6 +48,10 @@ public class Projectile : MonoBehaviour
         }
         else if(collision.gameObject.CompareTag("Monster"))
         {
+            // 아래 주석으로 실행해야 함
+            //collision.transform.GetComponent<MonsterController>().TakingDamage(damage);
+
+            // 임시로 실행하는 것
             collision.transform.GetComponent<Monster>().OnDamage(damage);
             Destroy(gameObject);
 

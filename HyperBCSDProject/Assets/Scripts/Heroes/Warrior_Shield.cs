@@ -9,8 +9,11 @@ public class Warrior_Shield : Hero
 
     protected override void Attack()
     {
-        // 방패병은 공격이 없음
-        base.Attack();
-        Debug.Log("Warrior_Shield : Attack()");
+        if (MonsterList[targetIndex].gameObject == null)
+        {
+            onTargetting = false;
+            return;
+        }
+
     }
 }

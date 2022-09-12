@@ -197,6 +197,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MonsterList: []
   heroStat: {fileID: 11400000, guid: a372c96bd592975468cd1a1a150f6d62, type: 2}
+  heroHP: 0
 --- !u!54 &-8924984720473718008
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5345,6 +5346,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ed91a5afd43cd94387b3d60aeaa200e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  meshCollider: {fileID: 6777577259919028089}
+  type: 0
+  projectilePos: {fileID: 0}
+  projectile: {fileID: 0}
 --- !u!1 &2895597157005968646
 GameObject:
   m_ObjectHideFlags: 0
@@ -6131,9 +6136,10 @@ GameObject:
   - component: {fileID: 2895597157006399866}
   - component: {fileID: 2895597157002975274}
   - component: {fileID: 2895597157003975274}
+  - component: {fileID: 6777577259919028089}
   m_Layer: 6
   m_Name: Sword6_L
-  m_TagString: Untagged
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6201,6 +6207,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &6777577259919028089
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2895597157005968666}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300170, guid: dc603c42b6599174e901596a1f756de4, type: 3}
 --- !u!1 &2895597157005968668
 GameObject:
   m_ObjectHideFlags: 0
@@ -15098,13 +15118,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9741bc90717c38f46bf6c83c91afd913, type: 3}
---- !u!4 &726489748338189694 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1765876725240111107, guid: 9741bc90717c38f46bf6c83c91afd913, type: 3}
-  m_PrefabInstance: {fileID: 1338876499850691965}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &3988168677384875085 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2723683116444379440, guid: 9741bc90717c38f46bf6c83c91afd913, type: 3}
+  m_PrefabInstance: {fileID: 1338876499850691965}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &726489748338189694 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1765876725240111107, guid: 9741bc90717c38f46bf6c83c91afd913, type: 3}
   m_PrefabInstance: {fileID: 1338876499850691965}
   m_PrefabAsset: {fileID: 0}
