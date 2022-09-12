@@ -17,4 +17,4 @@ MonoBehaviour:
   distance: 1
   power: 15
   a_speed: 1
-  m_speed: 5
+  m_speed: 10
