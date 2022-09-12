@@ -36,6 +36,9 @@ public class MonsterController : MonoBehaviour
     [SerializeField]
     Vector3 target;
 
+
+    [SerializeField]
+    private PlayerController playerController;
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -56,11 +59,17 @@ public class MonsterController : MonoBehaviour
         animator.SetBool("attack", attacking);
         animator.SetBool("takeDamage", takedamage);
         animator.SetBool("die", dead);
-        Dist = Vector3.Distance(GameObject.FindWithTag("Hero").transform.position, Monster.transform.position);
+        // Dist = Vector3.Distance(GameObject.FindWithTag("Hero").transform.position, Monster.transform.position);
         // Debug.Log(Dist);
+        if(playerController.GetComponent<PlayerController>().gameMode == GameMode.RunMode)
+        {
+            MoveCommand();
+        }
+        if (playerController.GetComponent<PlayerController>().gameMode == GameMode.BattleMode)
+        {
+            AttackCommand();
 
-        MoveCommand();
-        AttackCommand();
+        }
     }
 
     void MoveCommand()
@@ -83,11 +92,9 @@ public class MonsterController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Hero"))
+        if (other.CompareTag("Projectile"))
         {
-            Debug.Log("Attack_Start");
-            GameObject hero = GameObject.FindWithTag("Hero");
-            hero.GetComponent<HeroStat>().hp -= mstat.power;
+            TakingDamage(other.GetComponent<Projectile>().damage);
         }
     }
 

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    private int damage;
+    public int damage;
 
     [SerializeField]
     float speed = 0f;
